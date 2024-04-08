@@ -19,7 +19,7 @@ body{
 #logo{
     font-size: 40px;
     line-height: 80px;
-    color:cadetblue;
+    color: brown;
     float: left;
 }
 
@@ -31,20 +31,43 @@ nav{
 nav a:link{
     text-decoration: none;
     margin-right: 25px;
-    color: cadetblue;
+    color: brown;
     font-size: 20px;
 }
 
 nav a:hover{
-    color: cadetblue;
+    color: brown;
     font-size: 20px;
 }
 
 nav a:visited{
-    color: cadetblue;
+    color: brown;
     font-size: 20px;
 }
 
 .icon{
     margin-right: 7px;
+}
+
+#homepage{
+    height: 600px;
+    background-image: url("../img/r2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#black{
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 600px;
+}
+
+#content{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+
 }
