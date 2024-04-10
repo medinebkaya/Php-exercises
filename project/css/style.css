@@ -88,7 +88,7 @@ h3{
 
 }
 
-#container{
+.container{
     width: 1200px;
     height: auto;
     margin: auto;
@@ -152,4 +152,32 @@ span{
     line-height: 1.8;
     margin-top: 30px;
     font-weight: 100;
+}
+
+#projects{
+    background-color: #f8f9fa;
+    padding: 50px;
+    text-align: center;
+    height: 700px;
+}
+
+.card{
+    width: 320px;
+    height: 350px;
+    border: 1px solid #ddd;
+    padding: 0;
+    display: inline-block;
+}
+
+.headercard{
+    font-size: 15px;
+    color: #003666;
+}
+
+.cardp{
+    color: #888;
+}
+
+.card:hover{
+    border: 2px solid gray;
 }
