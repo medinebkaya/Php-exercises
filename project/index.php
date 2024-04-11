@@ -95,15 +95,16 @@
     <section id="contact">
         <div class="container">
             <h3 id="h3contact">Contact</h3>
+            <form action="index.php" method="post">
             <div id="contactopaque">
                 <div id="formgroup">
                     <div id="formleft">
-                        <input type="text" name="name" placeholder="Name Surname" required class="form-control">
-                        <input type="text" name="tel" placeholder="Telephone Number" required class="form-control">
+                        <input type="text" name="name" placeholder="Name Surname" required class="form-control" autocomplete="on">
+                        <input type="text" name="tel" placeholder="Telephone Number" required class="form-control" autocomplete="on">
                     </div>
                     <div id="formright">
-                        <input type="email" name="email" placeholder="Email" required class="form-control">
-                        <input type="text" name="headline" placeholder="Headline" required class="form-control">
+                        <input type="email" name="email" placeholder="Email" required class="form-control" autocomplete="on">
+                        <input type="text" name="headline" placeholder="Headline" required class="form-control" autocomplete="on">
                     </div>
                     <textarea name="message" placeholder="Message" id="" cols="30" rows="10" required class="form-control"></textarea>
                     <input type="submit" value="Send">
@@ -115,6 +116,7 @@
                     <p class="addressp"> Email: Medineburunkaya032@gmail.com</p>
                 </div>
             </div>
+            </form>
 
             <footer>
                 <div id="copyright">2024 | All rights reserved.</div>
@@ -131,3 +133,22 @@
     <script src="owl/owl.carousel.min.js"></script>
 </body>
 </html>
+
+<?php 
+    include 'connect.php';
+    if(isset($_POST['name'], $_POST['email'], $_POST['tel'], $_POST['headline'], $_POST['message'])){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $tel = $_POST['tel'];
+        $headline = $_POST['headline'];
+        $message = $_POST['message'];
+
+        $sql = "INSERT INTO contact (name, email, tel, headline, message) VALUES ('".$name."', '".$email."', '".$tel."', '".$headline."', '".$message."')";
+        if($conn->query($sql) === TRUE){
+            echo "<script>alert('Message sent successfully');</script>";
+        }
+        else{
+            echo "<script>alert('Error: " . $sql . "<br>" . $conn->error . "');</script>";
+    }}
+
+?>
